@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    padding: 0px 140px;
+    color: #2e2e2e;
+}
+/* Desktop-nav */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+}
+.nav-links{
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+a{
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+a:hover{
+    color: gray;
+    text-decoration: underline;
+    text-underline-offset: 1rem ;
+}
+.logo:hover{
+    cursor: pointer;
+}
+.logo img{
+    width:auto;
+}
+
+/* Section Styling */
+/* Home Section */
+#welcome{
+    height: 100%;
+}
+#projects{
+    height: 100%;
+}
+.container{
+    display: flex;
+    justify-content:center;
+    gap: 5rem;
+    align-items: center;
+    height: 100vh;
+}
+.profilePic{
+    position: relative;
+    width: 60%;
+    height: 100%;
+}
+.profilePic img{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.welcome{
+    text-align: left;
+    margin-left: 20px;
+}
+.welcome h1{
+    font-size: 5rem;
+    color:cadetblue;
+}
+.welcome h5{
+    font-size: 1rem;
+    padding: 0px 0px 20px 0px;
+}
+.welcome h5 > span{
+    color:#ccc
+}
+.welcome > p{
+    padding: 0px;
+}
+/* About Me */
+.aboutContainer{
+    height: 100vh;
+    margin: 50px 0px;
+    padding: 50px 0px;
+}
+.aboutContainer > h3{
+    text-align: center;
+    color: #ccc;
+    font-size: 1.0625rem;
+}
+.aboutContainer > h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: cadetblue;
+}
+.aboutme-details{
+    background-color: cadetblue;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 150px;
+}
+.aboutme-details p{
+    font-size: 1rem;
+    color: white;
+    text-align:justify;
+}
+.experience{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 20px;
+}
+.experience > div{
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 1rem;
+    text-align: center;
+}
+/* Projects Section */
+.projectsContainer{
+    height: 100vh;
+    padding: 100px 0px;
+}
+.projectsContainer > h3{
+    text-align: center;
+    color: #ccc;
+    font-size: 1.0625rem;
+}
+.projectsContainer > h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: cadetblue;
+}
+.projectsList{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 50px 0px;
+}
+.project-tile{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 2px solid #2e2e2e;
+    border-radius: 0.5rem;
+    padding-bottom: 20px;
+    width:500px;
+}
+.project-tile > img{
+    border-top-right-radius: 0.3rem;
+    border-top-left-radius: 0.3rem;
+    width: 100%;
+}
+.project-tile > h1, p, a{
+    padding: 0px 20px;
+}
+.project-tile > a{
+    margin-left: 20px;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    width: 200px;
+    background-color: cadetblue;
+    /* color: ; */
+}
+.project-tile > a:hover{
+    color: cadetblue;
+    background: none;
+    border: 1px solid cadetblue;
+    transition: 0.2s;
+    /* color: ; */
+}
+
+/* Contact Me */
+.contactContainer{
+    height: 100vh;
+    margin: 50px 0px;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.contactContainer > h3{
+    text-align: center;
+    color: #ccc;
+    font-size: 1.0625rem;
+}
+.contactContainer > h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: cadetblue;
+}
+.contactInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: cadetblue 0.15rem solid;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 0.5rem;
+}
+.infoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+.infoContainer > p > a{
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+    font-size: 1.5rem;;
+}
+.infoContainer > p > a:hover{
+    color: cadetblue;
+    text-decoration: underline;
+    text-underline-offset: 1rem ;
+}
+.contactIcon{
+    cursor: pointer;
+    height: 2rem;
+}
+
+footer{
+    text-align: center;
+    padding-bottom: 50px;
+}
