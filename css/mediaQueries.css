@@ -1,13 +1,291 @@
-@media screen and (max-width: 768px) {
-    .nav-links-container {
-      display: none;
-    }
-    
-    .nav-links-container.active {
-      display: flex;
-    }
-  
-    .hamburger-menu {
-      display: flex;
-    }
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
+  /* Tablet and small laptops */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    padding: 1rem;
   }
+
+  .profilePic {
+    margin-bottom: 1rem;
+  }
+
+  .profilePic img {
+    width: 60%;
+    /* Resize the profile picture */
+    height: auto;
+  }
+
+  .welcome h1 {
+    font-size: 3rem;
+    /* Reduce font size for headings */
+  }
+
+  .welcome h5 {
+    font-size: 1.2rem;
+    /* Adjust font size */
+  }
+
+  .welcome p {
+    font-size: 0.9rem;
+    /* Adjust font size */
+  }
+
+  .btn-container {
+    flex-direction: column;
+    /* Stack buttons vertically */
+    align-items: center;
+  }
+
+  .btn {
+    width: auto;
+    /* Adjust button width */
+    padding: 0.5rem 2rem;
+  }
+
+  #socials-container {
+    justify-content: center;
+    /* Center social icons */
+  }
+
+  .icon {
+    width: 1.5rem;
+    /* Resize icons */
+    height: 1.5rem;
+  }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .nav-links-container {
+    display: none;
+  }
+
+  .nav-links-container.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }.nav-links-container {
+    display: none;
+  }
+
+  .nav-links-container.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+  .aboutme-details {
+    flex-direction: column;
+    padding: 0px 50px;
+  }
+
+   /* Mobile phones */
+   .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .profilePic img {
+    width: 50%;
+    /* Further resize the profile picture */
+    height: auto;
+  }
+
+  .welcome h1 {
+    font-size: 2.5rem;
+    /* Further reduce font size for headings */
+  }
+
+  .welcome h5 {
+    font-size: 1rem;
+  }
+
+  .welcome p {
+    font-size: 0.8rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    /* Stack buttons vertically */
+    align-items: center;
+    gap: 0.5rem;
+    /* Reduce button spacing */
+  }
+
+  .btn {
+    width: 100%;
+    /* Full width buttons on mobile */
+    padding: 0.5rem 1rem;
+  }
+
+  #socials-container {
+    justify-content: center;
+    /* Center social icons */
+  }
+
+  .icon {
+    width: 1.2rem;
+    /* Further resize icons */
+    height: 1.2rem;
+  }
+
+  .experience {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .aboutContainer>h1 {
+    font-size: 2.5rem;
+  }
+
+  .aboutContainer>h3 {
+    font-size: 0.9375rem;
+  }
+
+  .aboutme-details p {
+    font-size: 0.875rem;
+  }
+
+  .projectsList {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 30px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  /* Very small screens like older mobile devices */
+  .hero-container {
+    padding-top: 120px;
+  }
+
+  .welcome h1 {
+    font-size: 2rem;
+    /* Reduce the heading size further */
+  }
+
+  .welcome h5 {
+    font-size: 0.8rem;
+  }
+
+  .welcome p {
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 0.4rem 1rem;
+    /* Adjust button padding */
+  }
+
+  .icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  .aboutme-details {
+    padding: 20px 20px 0px 20px;
+  }
+
+  .aboutContainer>h1 {
+    font-size: 2rem;
+  }
+
+  .aboutContainer>h3 {
+    font-size: 0.875rem;
+  }
+
+  .aboutme-details p {
+    font-size: 0.75rem;
+  }
+
+
+  .experience {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .experience div {
+    padding: 1rem;
+  }
+
+  .experience h1 {
+    font-size: 1rem;
+  }
+  .projectsList {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 0 10px;
+    scroll-snap-type: x mandatory;
+    /* Ensure smooth snap scrolling */
+  }
+
+  .project-tile {
+    min-width: 90%;
+    /* Make the card fit almost full width of the screen */
+    max-width: 90%;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    /* Align cards at the center during scroll */
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow for card effect */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .project-tile img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .project-tile h1 {
+    font-size: 1.25rem;
+    /* Reduced the font size */
+    margin: 10px 0;
+  }
+
+  .project-tile p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: justify;
+  }
+
+  .project-tile a {
+    font-size: 0.875rem;
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+
+  .project-tile a:hover {
+    border-color: #007bff;
+  }
+  footer nav{
+    display: none;
+  }
+  footer{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding:20px 0px;
+    font-size: 0.75rem;
+  }
+  footer .logo{
+    width: 2.5rem;
+  }
+}
