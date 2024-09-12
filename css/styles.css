@@ -351,6 +351,9 @@ nav {
   color: #ccc;
   font-size: 1.0625rem;
 }
+#contactMe p>a {
+  color: white;
+}
 .contactInfo{
   display: flex;
   align-items: center;
@@ -369,6 +372,9 @@ nav {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0px;
   text-align: center;
 }
 footer .logo{
