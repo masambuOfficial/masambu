@@ -141,10 +141,12 @@
       <div class="portfolio">
         <h2>My Areas of Expertise</h2>
         <div class="tabs">
+          <button class="tab-button active" onclick="openTab(event, 'AudioVisual')">
+            Audio-Visual Production
+          </button>
           <button
-            class="tab-button active"
-            onclick="openTab(event, 'Graphics')"
-          >
+            class="tab-button"
+            onclick="openTab(event, 'Graphics')">
             Graphics Design
           </button>
           <button class="tab-button" onclick="openTab(event, 'UIUX')">
@@ -153,47 +155,11 @@
           <button class="tab-button" onclick="openTab(event, 'WordPress')">
             WordPress Development
           </button>
-          <button class="tab-button" onclick="openTab(event, 'AudioVisual')">
-            Audio-Visual Production
-          </button>
           <button class="tab-button" onclick="openTab(event, 'WebDev')">
             Web Development
           </button>
         </div>
-        <div id="Graphics" class="tab-content active">
-          <div class="card-container">
-            <!-- Card 1 -->
-            <div class="card">
-              <img src="graphics-work1.jpg" alt="Graphics Work 1" />
-              <h3>Project Title 1</h3>
-              <p>Description of the project.</p>
-            </div>
-            <!-- Add more cards for Graphics Design -->
-          </div>
-        </div>
-        <div id="UIUX" class="tab-content">
-          <div class="card-container">
-            <!-- Card 1 -->
-            <div class="card">
-              <img src="uiux-work1.jpg" alt="UI/UX Work 1" />
-              <h3>Project Title 1</h3>
-              <p>Description of the project.</p>
-            </div>
-            <!-- Add more cards for UI/UX Design -->
-          </div>
-        </div>
-        <div id="WordPress" class="tab-content">
-          <div class="card-container">
-            <!-- Card 1 -->
-            <div class="card">
-              <img src="wordpress-work1.jpg" alt="WordPress Work 1" />
-              <h3>Project Title 1</h3>
-              <p>Description of the project.</p>
-            </div>
-            <!-- Add more cards for WordPress Development -->
-          </div>
-        </div>
-        <div id="AudioVisual" class="tab-content">
+        <div id="AudioVisual" class="tab-content active">
           <div class="card-container">
             <!-- Card 1 -->
             <!-- Lightbox Modal -->
@@ -287,6 +253,39 @@
             </div>
 
             <!-- Add more cards for Audio-Visual Production -->
+          </div>
+        </div>
+        <div id="Graphics" class="tab-content">
+          <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+              <img src="graphics-work1.jpg" alt="Graphics Work 1" />
+              <h3>Project Title 1</h3>
+              <p>Description of the project.</p>
+            </div>
+            <!-- Add more cards for Graphics Design -->
+          </div>
+        </div>
+        <div id="UIUX" class="tab-content">
+          <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+              <img src="uiux-work1.jpg" alt="UI/UX Work 1" />
+              <h3>Project Title 1</h3>
+              <p>Description of the project.</p>
+            </div>
+            <!-- Add more cards for UI/UX Design -->
+          </div>
+        </div>
+        <div id="WordPress" class="tab-content">
+          <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+              <img src="wordpress-work1.jpg" alt="WordPress Work 1" />
+              <h3>Project Title 1</h3>
+              <p>Description of the project.</p>
+            </div>
+            <!-- Add more cards for WordPress Development -->
           </div>
         </div>
         <div id="WebDev" class="tab-content">
