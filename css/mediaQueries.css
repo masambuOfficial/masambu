@@ -1,5 +1,6 @@
 /* Responsive Styles */
 @media only screen and (max-width: 1024px) {
+
   /* Tablet and small laptops */
   .hero-container {
     flex-direction: column;
@@ -69,7 +70,9 @@
 
   .hamburger-menu {
     display: flex;
-  }.nav-links-container {
+  }
+
+  .nav-links-container {
     display: none;
   }
 
@@ -80,13 +83,14 @@
   .hamburger-menu {
     display: flex;
   }
+
   .aboutme-details {
     flex-direction: column;
     padding: 0px 50px;
   }
 
-   /* Mobile phones */
-   .hero-container {
+  /* Mobile phones */
+  .hero-container {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
@@ -154,14 +158,19 @@
     font-size: 0.875rem;
   }
 
-  .projectsList {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 30px;
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
   }
 }
 
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
+
   /* Very small screens like older mobile devices */
   .hero-container {
     padding-top: 120px;
@@ -189,6 +198,7 @@
     width: 1rem;
     height: 1rem;
   }
+
   .aboutme-details {
     padding: 20px 20px 0px 20px;
   }
@@ -218,74 +228,42 @@
   .experience h1 {
     font-size: 1rem;
   }
+
   .projectsList {
-    grid-template-columns: 1fr;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
     gap: 15px;
     padding: 0 10px;
     scroll-snap-type: x mandatory;
-    /* Ensure smooth snap scrolling */
   }
 
   .project-tile {
     min-width: 90%;
-    /* Make the card fit almost full width of the screen */
     max-width: 90%;
     flex-shrink: 0;
     scroll-snap-align: center;
-    /* Align cards at the center during scroll */
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    /* Add a subtle shadow for card effect */
-    transition: transform 0.3s ease-in-out;
   }
 
   .project-tile img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
   }
 
-  .project-tile h1 {
-    font-size: 1.25rem;
-    /* Reduced the font size */
-    margin: 10px 0;
-  }
-
-  .project-tile p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: justify;
-  }
-
-  .project-tile a {
-    font-size: 0.875rem;
-    color: #007bff;
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s ease;
-  }
-
-  .project-tile a:hover {
-    border-color: #007bff;
-  }
-  footer nav{
+  footer nav {
     display: none;
   }
-  footer{
+
+  footer {
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    padding:20px 0px;
+    padding: 20px 0px;
     font-size: 0.75rem;
   }
-  footer .logo{
+
+  footer .logo {
     width: 2.5rem;
   }
 }

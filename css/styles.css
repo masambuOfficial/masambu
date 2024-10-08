@@ -1,3 +1,4 @@
+/* Global Styles start-here */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
@@ -8,22 +9,20 @@
   color: #2e2e2e;
 }
 
-
 .container {
-  /* max-width: 1100px; */
   margin: 0px auto;
 }
-
+/* Global Styles end-here */
 
 /* Navbar */
 #header {
   position: fixed;
   height: 80px;
   width: 100dvw;
-  background-color: white;
+  background-color: cadetblue;
 }
 
-/* Navbar */
+/* Navbar Styles start-here */
 nav {
   display: flex;
   justify-content: space-between;
@@ -45,7 +44,9 @@ nav {
   list-style: none;
   font-size: 1.5rem;
 }
-
+.nav-color li a{
+  color: white;
+}
 .hamburger-menu {
   display: none;
 }
@@ -59,7 +60,7 @@ nav {
 .hamburger-icon span {
   height: 3px;
   width: 25px;
-  background: black;
+  background: white;
   margin: 5px;
   border-radius: 5px;
   transition: all 0.3s ease;
@@ -83,7 +84,7 @@ nav {
   position: absolute;
   top: 70px;
   right: 0;
-  background-color: white;
+  background-color: cadetblue;
   width: 100%;
   height: calc(100vh - 70px);
   justify-content: center;
@@ -96,9 +97,9 @@ nav {
   flex-direction: column;
   gap: 1rem;
 }
+/* Navbar Styles ends-here */
 
-
-/* Hero Section */
+/* Hero Section Styles start-here */ 
 .hero-container {
   display: flex;
   justify-content: center;
@@ -190,8 +191,9 @@ nav {
   transform: scale(1.25, 1.25);
   transition: 0.2s;
 }
+/* Hero Section Styles ends-here */ 
 
-/* About Me */
+/* About Me Styles starts-here*/
 .aboutContainer {
   height: 100%;
   margin: 0px auto;
@@ -256,85 +258,148 @@ nav {
 .aboutImg img {
   width: 100%;
 }
+/* About Me Styles ends-here*/
 
-/* Projects Section */
+/* Projects Section starts-here */
 #projects {
-  height: 100dvh;
   padding: 50px 0;
-  background-color: #f9f9f9;
+}
+
+.portfolio {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tabs {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-#projects h3 {
-  text-align: center;
-  color: #ccc;
-  font-size: 1.0625rem;
+.tab-button {
+  background-color: #f1f1f1;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-.title {
-  text-align: center;
-  font-weight: bolder;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: cadetblue;
+.tab-button:hover {
+  background-color: #ddd;
 }
 
-.projectsList {
+.tab-button.active {
+  background-color: cadetblue;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: 20px 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Card Container: Responsive Grid Layout */
+.card-container {
   display: flex;
   gap: 20px;
-  padding: 0 50px;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.project-tile {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100%;
+  max-width: 350px;
   padding: 20px;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 
-.project-tile:hover {
-  transform: translateY(-5px);
-}
-
-.project-tile img {
-  max-width: 100%;
+.card img {
+  width: 100%;
   height: auto;
   border-radius: 5px;
-}
-
-.project-tile h1 {
-  font-size: 1.25rem;
-  color: cadetblue;
-  margin: 15px 0;
-}
-
-.project-tile p {
-  font-size: 1rem;
-  color: #555;
   margin-bottom: 15px;
 }
 
-.project-tile a {
-  font-size: 1rem;
-  color: white;
-  background-color: cadetblue;
-  padding: 10px 20px;
-  border-radius: 5px;
+.card a {
+  font-size: 1.25rem;
+  text-align: left;
+  color: cadetblue;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  text-align: left;
 }
 
-.project-tile a:hover {
-  background-color: #5f9ea0;
+.card p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #555;
+  text-align: justify;
+}
+iframe{
+  margin-bottom: 15px;
 }
 
+/* Lightbox modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 900px;
+}
+
+.lightbox-content iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* Projects Section ends-here */
+
+/* Contact me section starts-here*/
 #contactMe {
   height: 100%;
   padding: 50px 0;
