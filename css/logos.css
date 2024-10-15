@@ -1,0 +1,90 @@
+/* Style for the Logo Designs section */
+.welcome {
+    background-image: url('https://images.pexels.com/photos/3045245/pexels-photo-3045245.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); /* Ensure the path is correct */
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    height: 50dvh;
+}
+#logoDesigns {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .logo-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  /* Style for each logo card */
+  .logo-card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .logo-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .logo-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive CSS for tablet and mobile devices */
+  @media (max-width: 768px) {
+    /* Adjust title size on smaller screens */
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    /* Adjust the card size for tablets */
+    .logo-card {
+      width: 150px;
+      height: 150px;
+    }
+  
+    /* Reduce the gap between cards */
+    .logo-cards {
+      gap: 15px;
+    }
+  }
+
+  
+  @media (max-width: 480px) {
+    /* Adjust title size for small mobile screens */
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    /* Stack cards vertically on small mobile screens */
+    .logo-cards {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    /* Further adjust card size for mobile */
+    .logo-card {
+      width: 100%;
+      max-width: 250px;
+      height: auto;
+      padding: 10px;
+    }
+  }
+  

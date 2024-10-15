@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masambu - Logo Designs</title>
+    <link rel="icon" type="image/x-icon" href="Assets/Masambu-logo.svg" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mediaQueries.css" />
+    <link rel="stylesheet" href="css/logos.css">
+  </head>
+  <body>
+    <!-- Header Starts here -->
+    <header id="header">
+      <nav>
+        <div class="logo">
+          <a href="/index.html">
+            <img src="Assets/Masambu-logo-white.png" alt="masambu-logo" />
+          </a>
+        </div>
+        <div class="nav-links-container">
+          <ul class="nav-links nav-color">
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#aboutMe">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contactMe">Contact</a></li>
+          </ul>
+        </div>
+        <div class="hamburger-menu">
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome">
+      <div class="container">
+        <div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Logo Designs Section (New Section) -->
+    <section id="logoDesigns">
+      <div class="container">
+        <h2 class="section-title">My Logo Designs</h2>
+        <div class="logo-cards">
+          <!-- Card 1 -->
+          <div class="logo-card">
+            <img src="Assets/Flourish_Hub.jpg" alt="Flourish_Hub" />
+          </div>
+          <!-- Card 2 -->
+          <div class="logo-card">
+            <img src="Assets/KAMONKOLI_COLLEGE_OLD_STUDENTS_ASSOCIATION.png" alt="KAMONKOLI COLLEGE OLD STUDENTS’ ASSOCIATION" />
+          </div>
+          <!-- Card 3 -->
+          <div class="logo-card">
+            <img src="Assets/client-logo3.png" alt="Client Logo 3" />
+            <p>Client 3 - Minimalist Brand Logo</p>
+          </div>
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Me Section -->
+    <section id="contactMe">
+      <div class="container">
+        <div class="aboutContainer">
+          <h3>Get in Touch</h3>
+          <h1 class="title">Contact Me</h1>
+          <div class="contactInfo">
+            <div class="infoContainer">
+              <img
+                src="Assets/email.png"
+                alt="email icon"
+                class="contactIcon"
+              />
+              <p>
+                <a href="mailto:masambue11@gmail.com">masambue11@gmail.com</a>
+              </p>
+            </div>
+            <div class="infoContainer">
+              <img
+                src="Assets/tele.png"
+                alt="telephone icon"
+                class="contactIcon"
+              />
+              <p><a href="Tel:256-782-440907">+256 782 440907</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="logo">
+        <a href="/index.html">
+          <img src="Assets/Masambu-logo.png" alt="masambu-logo" />
+        </a>
+      </div>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p class="copyright">Copyright © 2023 Masambu. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      function toggleMenu() {
+        const navLinksContainer = document.querySelector(
+          ".nav-links-container"
+        );
+        const hamburgerIcon = document.querySelector(".hamburger-icon");
+        navLinksContainer.classList.toggle("active");
+        hamburgerIcon.classList.toggle("active");
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
