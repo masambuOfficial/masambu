@@ -6,7 +6,25 @@ import { profile } from "@/lib/data";
 export const metadata: Metadata = {
   title: "AEW-AEC Conference Platform",
   description:
-    "Full-stack event management system for UNESCO Africa Engineering Week.",
+    "Case study: a multilingual, full-stack event management platform for UNESCO Africa Engineering Week, built with Next.js, NestJS, Firebase and PesaPal payments. 1000+ registrations.",
+  alternates: { canonical: "/projects/aew-aec" },
+  openGraph: {
+    title: "AEW-AEC Conference Platform — Masambu",
+    description:
+      "A multilingual, full-stack event management platform for UNESCO Africa Engineering Week.",
+    url: "/projects/aew-aec",
+    type: "article",
+    images: [
+      {
+        url: "/images/aewaec-conference-2025.png",
+        alt: "Screenshot of the AEW-AEC Conference Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/images/aewaec-conference-2025.png"],
+  },
 };
 
 const stats = [
@@ -98,9 +116,9 @@ async checkDuplicateEmail(email: string) {
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-8 text-sm uppercase tracking-[0.18em] text-muted">
+    <h2 className="mb-8 text-sm font-normal uppercase tracking-[0.18em] text-muted">
       {children}
-    </p>
+    </h2>
   );
 }
 

@@ -21,7 +21,11 @@ function Card({
       <div className="relative aspect-[16/10] overflow-hidden bg-surface-2">
         <Image
           src={project.image}
-          alt=""
+          alt={
+            project.youtubeId
+              ? `Video thumbnail: ${project.title}`
+              : `${project.title} — project preview`
+          }
           fill
           sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 100vw"
           className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"

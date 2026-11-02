@@ -38,7 +38,8 @@ export default function Loader() {
 
   return (
     <div
-      aria-hidden={done}
+      aria-hidden
+      data-nosnippet
       className={`loader fixed inset-0 z-[100] grid place-items-center bg-background transition-opacity duration-500 ${
         done ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
