@@ -3,8 +3,15 @@
 import { useEffect, useState } from "react";
 
 const KEY = "loader-seen";
+const DURATION = 1400;
 
-/** Intro screen: progress bar and counter. Shown once per browser session. */
+/**
+ * Intro screen: progress bar and counter. Shown once per browser session.
+ *
+ * Timer-driven (not requestAnimationFrame, which browsers pause in background
+ * tabs), and it can never block the site: a CSS animation in globals.css hides
+ * the overlay after a few seconds even if this script never runs.
+ */
 export default function Loader() {
   const [count, setCount] = useState(0);
   const [done, setDone] = useState(false);
@@ -18,22 +25,34 @@ export default function Loader() {
     // Hidden via CSS in these cases (see globals.css), so nothing to animate.
     if (seen || reduce) return;
 
-    const start = performance.now();
-    const duration = 1400;
-    let raf = 0;
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      setCount(Math.round(p * 100));
-      if (p < 1) raf = requestAnimationFrame(tick);
-      else {
-        try {
-          sessionStorage.setItem(KEY, "1");
-        } catch {}
-        setTimeout(() => setDone(true), 250);
-      }
+    try {
+      sessionStorage.setItem(KEY, "1");
+    } catch {}
+
+    const start = Date.now();
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      clearInterval(tick);
+      setCount(100);
+      setTimeout(() => setDone(true), 250);
     };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    const tick = setInterval(() => {
+      const p = Math.min((Date.now() - start) / DURATION, 1);
+      setCount(Math.round(p * 100));
+      if (p >= 1) finish();
+    }, 30);
+    // Background tabs throttle timers; never leave the overlay up for long.
+    const failsafe = setTimeout(finish, DURATION + 1200);
+    const onHide = () => document.hidden && finish();
+    document.addEventListener("visibilitychange", onHide);
+
+    return () => {
+      clearInterval(tick);
+      clearTimeout(failsafe);
+      document.removeEventListener("visibilitychange", onHide);
+    };
   }, []);
 
   return (

@@ -152,6 +152,18 @@ body {
   animation: drift 7s ease-in-out infinite;
 }
 
+/* Failsafe: the intro overlay always clears itself, even if JS never runs. */
+@keyframes loader-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.loader {
+  animation: loader-out 0.4s ease 3.4s forwards;
+}
+
 html[data-loader="seen"] .loader {
   display: none;
 }
