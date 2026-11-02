@@ -13,7 +13,7 @@ import TrackLink from "@/components/TrackLink";
 import { profile, tracks } from "@/lib/data";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <p className="mono-label mb-10">{children}</p>;
+  return <h2 className="mono-label mb-10 font-normal">{children}</h2>;
 }
 
 const serviceIcons = {
@@ -144,9 +144,9 @@ export default function Home() {
               <div className="mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-2">
                 <div>
                   <p className="mono-label">{t.years}+ years</p>
-                  <h2 className="mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
+                  <h3 className="mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
                     {t.title}
-                  </h2>
+                  </h3>
                 </div>
                 <TrackLink filter={t.filter} />
               </div>
@@ -171,9 +171,9 @@ export default function Home() {
                           <Icon size={18} strokeWidth={1.75} />
                         </span>
                       </div>
-                      <h3 className="relative mt-8 text-xl font-medium tracking-tight transition-transform duration-500 group-hover:translate-x-1">
+                      <h4 className="relative mt-8 text-xl font-medium tracking-tight transition-transform duration-500 group-hover:translate-x-1">
                         {s.title}
-                      </h3>
+                      </h4>
                       <p className="relative mt-2 leading-relaxed text-muted transition-colors duration-300 group-hover:text-foreground/80">
                         {s.text}
                       </p>

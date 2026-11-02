@@ -3,7 +3,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { logos } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Logo Designs" };
+export const metadata: Metadata = {
+  title: "Logo Designs",
+  description:
+    "Selected logo and brand identity work by Masambu for businesses, schools and communities.",
+  alternates: { canonical: "/logos" },
+  openGraph: {
+    title: "Logo Designs — Masambu",
+    description:
+      "Selected logo and brand identity work by Masambu for businesses, schools and communities.",
+    url: "/logos",
+    type: "website",
+  },
+};
 
 export default function LogosPage() {
   return (
