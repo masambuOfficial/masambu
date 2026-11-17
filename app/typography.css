@@ -1,0 +1,17 @@
+/* Headings use Cal Sans, which ships a single weight; pin it so utilities
+   like font-semibold don't synthesize a fake bold. Section labels keep the
+   mono face via .mono-label (declared after this file loads). */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display-var), var(--font-sans-var), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  /* Cal Sans is tight by default and the page applies negative tracking;
+     open it up slightly. Overrides per-heading tracking-* utilities. */
+  letter-spacing: 0.015em;
+}
+
+h2.mono-label {
+  font-family: var(--font-mono);
+}

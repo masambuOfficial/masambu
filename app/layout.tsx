@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
-import { TikTok_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Cal_Sans, Jost, IBM_Plex_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import { profile } from "@/lib/data";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/site";
 import "./globals.css";
+import "./typography.css";
 
-const sans = TikTok_Sans({
+const sans = Jost({
   variable: "--font-sans-var",
   subsets: ["latin"],
+});
+
+// Display face for headings; Cal Sans ships a single (regular) weight.
+const display = Cal_Sans({
+  variable: "--font-display-var",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 const mono = IBM_Plex_Mono({
@@ -71,7 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       data-theme="dark"
       suppressHydrationWarning
-      className={`${sans.variable} ${mono.variable} h-full`}
+      className={`${sans.variable} ${display.variable} ${mono.variable} h-full`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

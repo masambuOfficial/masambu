@@ -24,6 +24,16 @@ const serviceIcons = {
   design: Shapes,
 };
 
+const quoteBtn =
+  "inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-opacity hover:opacity-85";
+
+const quoteShortcuts = [
+  { label: "Online shop", service: "online" },
+  { label: "School", service: "school" },
+  { label: "Church", service: "church" },
+  { label: "Redesign", service: "redesign" },
+];
+
 const btn =
   "group relative inline-flex items-center gap-2 overflow-hidden rounded-full border px-6 py-3 text-sm font-medium transition-all duration-300";
 
@@ -185,6 +195,22 @@ export default function Home() {
                   );
                 })}
               </div>
+              {t.id === "digital" && (
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <a href="/website-quote" className={quoteBtn}>
+                    Get a Website Quote <ArrowUpRight size={15} />
+                  </a>
+                  {quoteShortcuts.map((q) => (
+                    <a
+                      key={q.service}
+                      href={`/website-quote?service=${q.service}`}
+                      className="rounded-full border border-line px-4 py-2 text-sm text-muted transition-colors hover:border-accent hover:text-foreground"
+                    >
+                      {q.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
