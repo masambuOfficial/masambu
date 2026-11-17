@@ -116,9 +116,9 @@ async checkDuplicateEmail(email: string) {
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-8 text-sm font-normal uppercase tracking-[0.18em] text-muted">
+    <p className="mb-8 text-sm font-normal uppercase tracking-[0.18em] text-muted">
       {children}
-    </h2>
+    </p>
   );
 }
 

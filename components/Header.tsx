@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { Briefcase, Home, Layers, Mail, Moon, Sun, User } from "lucide-react";
+import { Briefcase, FileText, Home, Layers, Mail, Moon, Sun, User } from "lucide-react";
 import { profile } from "@/lib/data";
 
 const links = [
@@ -11,6 +11,7 @@ const links = [
   { href: "/#work", label: "Work", Icon: Briefcase },
   { href: "/#services", label: "Services", Icon: Layers },
   { href: "/#contact", label: "Contact", Icon: Mail },
+  { href: "/website-quote", label: "Get a Website Quote", Icon: FileText },
 ];
 
 export default function Header() {
@@ -66,7 +67,7 @@ export default function Header() {
                 className="flex h-9 items-center rounded-full px-[9.5px] text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
               >
                 <Icon size={17} strokeWidth={1.75} className="shrink-0" />
-                <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 ease-out group-data-[open=true]/nav:ml-2 group-data-[open=true]/nav:max-w-24 group-data-[open=true]/nav:opacity-100">
+                <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 ease-out group-data-[open=true]/nav:ml-2 group-data-[open=true]/nav:max-w-44 group-data-[open=true]/nav:opacity-100">
                   {label}
                 </span>
               </Link>
