@@ -13,7 +13,7 @@ import TrackLink from "@/components/TrackLink";
 import { profile, tracks } from "@/lib/data";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return <h2 className="mono-label mb-10 font-normal">{children}</h2>;
+  return <p className="mono-label mb-10 font-normal">{children}</p>;
 }
 
 const serviceIcons = {

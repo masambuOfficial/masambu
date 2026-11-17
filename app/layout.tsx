@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Cal_Sans, Jost, IBM_Plex_Mono } from "next/font/google";
+import { Cal_Sans, Mona_Sans, IBM_Plex_Mono } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import { profile } from "@/lib/data";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/site";
 import "./globals.css";
-import "./typography.css";
 
-const sans = Jost({
-  variable: "--font-sans-var",
+const sans = Mona_Sans({
+  variable: "--font-mona",
   subsets: ["latin"],
+  display: "swap",
 });
 
 // Display face for headings; Cal Sans ships a single (regular) weight.
 const display = Cal_Sans({
-  variable: "--font-display-var",
+  variable: "--font-cal",
   subsets: ["latin"],
   weight: "400",
+  display: "swap",
 });
 
 const mono = IBM_Plex_Mono({

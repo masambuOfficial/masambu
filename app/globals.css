@@ -31,7 +31,8 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-accent: var(--accent);
-  --font-sans: var(--font-sans-var), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-mona), 'Mona Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-cal), 'Cal Sans', 'Mona Sans', ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono-var), ui-monospace, monospace;
 }
 
@@ -42,6 +43,18 @@ html {
 }
 html[data-theme="light"] {
   color-scheme: light;
+}
+
+/* Outside any @layer so Tailwind utilities can't override it.
+   Cal Sans has a single weight; headings are never bold. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
 }
 
 body {
