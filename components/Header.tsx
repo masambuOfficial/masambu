@@ -15,7 +15,8 @@ const links = [
 ];
 
 export default function Header() {
-  // The whole pill expands together; collapses on leave or outside click/tap.
+  // On sm+ the whole pill expands together (labels appear); collapses on leave
+  // or outside click/tap. On mobile the labels never show: icons only.
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLUListElement>(null);
 
@@ -67,7 +68,7 @@ export default function Header() {
                 className="flex h-9 items-center rounded-full px-[9.5px] text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
               >
                 <Icon size={17} strokeWidth={1.75} className="shrink-0" />
-                <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 ease-out group-data-[open=true]/nav:ml-2 group-data-[open=true]/nav:max-w-44 group-data-[open=true]/nav:opacity-100">
+                <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 ease-out sm:group-data-[open=true]/nav:ml-2 sm:group-data-[open=true]/nav:max-w-44 sm:group-data-[open=true]/nav:opacity-100">
                   {label}
                 </span>
               </Link>

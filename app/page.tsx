@@ -11,6 +11,12 @@ import {
 import Work from "@/components/Work";
 import TrackLink from "@/components/TrackLink";
 import { profile, tracks } from "@/lib/data";
+import { getAllProjects } from "@/lib/work";
+import { Suspense } from "react";
+
+async function WorkSection() {
+  return <Work projects={await getAllProjects()} />;
+}
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return <p className="mono-label mb-10 font-normal">{children}</p>;
@@ -142,7 +148,9 @@ export default function Home() {
       {/* Work */}
       <section id="work" className="border-t border-line py-24">
         <SectionLabel>Works</SectionLabel>
-        <Work />
+        <Suspense fallback={<p className="mono-label">Loading work…</p>}>
+          <WorkSection />
+        </Suspense>
       </section>
 
       {/* Services */}
