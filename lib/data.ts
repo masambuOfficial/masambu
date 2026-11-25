@@ -90,9 +90,86 @@ export const tracks: {
   },
 ];
 
+export type Client = {
+  id: string;
+  name: string;
+  /** Short chip label. */
+  short: string;
+  blurb: string;
+  /** Public YouTube playlist id: new videos added to it appear automatically. */
+  playlistId?: string;
+  /** Category given to videos pulled from the playlist. */
+  playlistCategory?: CategoryId;
+};
+
+/**
+ * ADD A CLIENT: copy one block below, change the fields, done. Nothing else to edit.
+ *   id            lowercase-with-dashes; becomes the page /work/<id>
+ *   name / short  full name (headings) and short name (filter chip)
+ *   blurb         one line shown under the name
+ *   playlistId    optional: a public/unlisted YouTube playlist (the "PL..." part
+ *                 of ?list=PL...). Every video in it appears automatically.
+ * Then tag each project below with `client: "<id>"`.
+ */
+const clientList = [
+  {
+    id: "hesfb",
+    name: "Higher Education Students' Financing Board",
+    short: "HESFB",
+    blurb: "Website and livestream production for Uganda's students' loan scheme.",
+  },
+  {
+    id: "igad",
+    name: "IGAD",
+    short: "IGAD",
+    blurb: "Audio-visual production and the IGAD Support Platform.",
+    playlistId: "PLKzbcZTAbMVw",
+    playlistCategory: "video",
+  },
+  {
+    id: "likana-safaris",
+    name: "Likana Safaris Uganda",
+    short: "Likana Safaris",
+    blurb: "Travel and tourism websites and platforms.",
+  },
+  {
+    id: "kingdom-life",
+    name: "Kingdom Life Tabernacle",
+    short: "Kingdom Life",
+    blurb: "Website, livestream and episodic video production for the church.",
+  },
+  {
+    id: "unesco-aew",
+    name: "UNESCO Africa Engineering Week",
+    short: "UNESCO AEW",
+    blurb: "A multilingual conference platform with payments.",
+  },
+  {
+    id: "refactory",
+    name: "Refactory",
+    short: "Refactory",
+    blurb: "Product design for an information management system.",
+  },
+  {
+    id: "various",
+    name: "Various clients",
+    short: "Various",
+    blurb: "Brand identities for businesses, schools and communities.",
+  },
+] as const satisfies readonly Client[];
+
+export type ClientId = (typeof clientList)[number]["id"];
+export type ClientRecord = Client & { id: ClientId };
+export const clients: readonly ClientRecord[] = clientList;
+
 export type Project = {
   title: string;
   category: CategoryId;
+  client: ClientId;
+  /** ISO date; used to sort newest first (playlist videos have one). */
+  date?: string;
+  /** Hand-picked: leads its client's row on "Show all". */
+  featured?: boolean;
   description?: string;
   /** Local image in /public, or a YouTube thumbnail for video items. */
   image: string;
@@ -107,6 +184,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "AEW-AEC Conference Platform",
+    client: "unesco-aew",
     category: "web",
     description:
       "Full-stack event management for UNESCO Africa Engineering Week: multilingual, with payments and 1000+ registrations.",
@@ -116,30 +194,49 @@ export const projects: Project[] = [
   },
   {
     title: "Kingdom Life Tabernacle",
+    client: "kingdom-life",
     category: "wordpress",
     image: "/images/kingdomlifetabernacle.net.png",
     href: "https://kingdomlifetabernacle.net/",
   },
   {
     title: "Higher Education Students' Financing Board",
+    client: "hesfb",
     category: "wordpress",
     image: "/images/hesfb.go.ug.png",
     href: "https://hesfb.go.ug/",
   },
   {
     title: "IGAD Support Platform",
+    client: "igad",
     category: "wordpress",
     image: "/images/igadsupportplatform.org.png",
     href: "https://igadsupportplatform.org/",
   },
   {
-    title: "Activemakes",
-    category: "wordpress",
-    image: "/images/activemakes.com.png",
-    href: "https://www.activemakes.com/",
+    title: "Likana Safaris Uganda",
+    client: "likana-safaris",
+    category: "web",
+    image: "/images/likanasafarisuganda.png",
+    href: "https://likanasafarisuganda.com/",
+  },
+  {
+    title: "e-BETP Marketplace",
+    client: "likana-safaris",
+    category: "web",
+    image: "/images/ebept.africa.png",
+    href: "https://ebetp.africa/",
+  },
+  {
+    title: "AYAD Consults International",
+    client: "likana-safaris",
+    category: "web",
+    image: "/images/ayadconsults.com.png",
+    href: "https://ayadconsults.com/",
   },
   {
     title: "Refactory Information Management System",
+    client: "refactory",
     category: "uiux",
     description:
       "A clean, intuitive interface for managing student and institutional data, built around simple, efficient workflows.",
@@ -148,6 +245,7 @@ export const projects: Project[] = [
   },
   {
     title: "Logo Designs",
+    client: "various",
     category: "graphics",
     description: "A selection of brand identities and logo marks.",
     image: "/images/logo-design-process.jpg",
@@ -155,6 +253,7 @@ export const projects: Project[] = [
   },
   {
     title: "Students' Loan Scheme Beneficiaries List AY2024/25",
+    client: "hesfb",
     category: "video",
     description: "Livestream production and multimedia setup.",
     image: "https://img.youtube.com/vi/lmTdxNdcI3k/hqdefault.jpg",
@@ -162,6 +261,7 @@ export const projects: Project[] = [
   },
   {
     title: "Students' Loan Scheme Beneficiaries List AY2023/24",
+    client: "hesfb",
     category: "video",
     description: "Livestream production and multimedia setup.",
     image: "https://img.youtube.com/vi/8XyJmarucdA/hqdefault.jpg",
@@ -169,6 +269,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tower of Faith Series: TOF Dedication",
+    client: "kingdom-life",
     category: "video",
     description: "A 12-episode series, produced end to end.",
     image: "https://img.youtube.com/vi/5ybZaas_DSY/hqdefault.jpg",
@@ -176,6 +277,7 @@ export const projects: Project[] = [
   },
   {
     title: "10 Years Celebration of the Kingdom Life Ministry",
+    client: "kingdom-life",
     category: "video",
     description: "Full multimedia production for the anniversary event.",
     image: "https://img.youtube.com/vi/23ektKhD5ac/hqdefault.jpg",
